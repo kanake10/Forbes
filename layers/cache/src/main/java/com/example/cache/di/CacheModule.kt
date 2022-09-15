@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.cache.converters.Converters
 import com.example.cache.db.ForbesDatabase
+import com.example.core.Constants.FORBES_DB
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -33,10 +34,11 @@ object CacheModule {
         return Room.databaseBuilder(
             context,
             ForbesDatabase::class.java,
-            "forbes_database"
+            FORBES_DB
         )
             .addTypeConverter(converters)
             .fallbackToDestructiveMigration()
             .build()
     }
 }
+

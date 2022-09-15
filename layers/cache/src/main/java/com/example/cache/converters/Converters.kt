@@ -12,18 +12,18 @@ class Converters (
         ){
 
     @TypeConverter
-    fun fromIndustry(json: String): List<Industry> {
-        return gson.fromJson<ArrayList<Industry>>(
+    fun fromString(json: String): List<String> {
+        return gson.fromJson<ArrayList<String>>(
             json,
-            object : TypeToken<ArrayList<Industry>>() {}.type
+            object : TypeToken<ArrayList<String>>() {}.type
         ) ?: emptyList()
     }
 
     @TypeConverter
-    fun toIndustry(follow: List<Industry>): String {
+    fun toString(follow: List<String>): String {
         return gson.toJson(
             follow,
-            object : TypeToken<ArrayList<Industry>>() {}.type
+            object : TypeToken<ArrayList<String>>() {}.type
         ) ?: "[]"
     }
 

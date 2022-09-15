@@ -14,4 +14,7 @@ interface YoungestDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertYoungest(list: List<YoungestEntity>)
+
+    @Query("DELETE FROM youngest_table")
+    suspend fun deleteYoungest()
 }

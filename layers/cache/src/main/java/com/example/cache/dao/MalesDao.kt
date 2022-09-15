@@ -14,4 +14,7 @@ interface MalesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertMales(list: List<MalesEntity>)
+
+    @Query("DELETE FROM males_table")
+    suspend fun deleteMales()
 }

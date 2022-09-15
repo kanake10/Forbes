@@ -13,4 +13,7 @@ interface AllForbesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAllForbes(list: List<AllForbesEntity>)
+
+    @Query("DELETE FROM all_forbes_table")
+    suspend fun deleteAllForbes()
 }

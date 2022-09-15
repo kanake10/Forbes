@@ -1,9 +1,11 @@
 package com.example.cache.entity
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "females_table")
 data class FemalesEntity(
+    @PrimaryKey(autoGenerate = false)
     val rank: Int,
     val finalWorth: Double,
     val personName: String,

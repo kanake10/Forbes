@@ -1,9 +1,11 @@
 package com.example.cache.entity
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 @Entity(tableName = "according_to_industry_table")
 data class AccordingToIndustryEntity(
+    @PrimaryKey(autoGenerate = false)
     val rank: Int,
     val finalWorth: Double,
     val personName: String,

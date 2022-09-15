@@ -2,6 +2,7 @@ package com.example.domain.repo
 
 import com.example.core.Resource
 import com.example.domain.models.*
+import kotlinx.coroutines.flow.Flow
 
 
 interface ForbesListRepository {

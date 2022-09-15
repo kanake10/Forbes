@@ -2,8 +2,8 @@ package com.example.cache.entity
 
 import androidx.room.Entity
 
-@Entity(tableName = "all_forbes_table")
-data class AllForbesEntity(
+@Entity(tableName = "males_table")
+data class MalesEntity(
     val rank: Int,
     val finalWorth: Double,
     val personName: String,

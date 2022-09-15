@@ -5,12 +5,13 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.cache.entity.AllForbesEntity
+import com.example.cache.entity.OldestEntity
 
 @Dao
-interface AllForbesDao {
-    @Query("SELECT * FROM all_forbes_table")
-    suspend fun getAllForbes():List<AllForbesEntity>
+interface OldestDao {
+    @Query("SELECT * FROM oldest_table")
+    suspend fun getOldest():List<OldestEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllForbes(list: List<AllForbesEntity>)
+    suspend fun insertOldest(list: List<OldestEntity>)
 }

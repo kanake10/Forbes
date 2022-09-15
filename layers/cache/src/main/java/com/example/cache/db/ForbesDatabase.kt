@@ -2,9 +2,12 @@ package com.example.cache.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.cache.converters.Converters
 import com.example.cache.dao.*
 import com.example.cache.entity.*
 
+@TypeConverters(Converters::class)
 @Database(
     entities = [AccordingToIndustryEntity::class,AllForbesEntity::class,FemalesEntity::class,MalesEntity::class,OldestEntity::class,YoungestEntity::class],
     version = 1,

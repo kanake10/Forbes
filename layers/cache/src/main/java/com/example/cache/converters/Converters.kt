@@ -12,7 +12,7 @@ class Converters (
         ){
 
     @TypeConverter
-    fun fromIndustry(json: String): List<String> {
+    fun fromString(json: String): List<String> {
         return gson.fromJson<ArrayList<String>>(
             json,
             object : TypeToken<ArrayList<String>>() {}.type
@@ -20,7 +20,7 @@ class Converters (
     }
 
     @TypeConverter
-    fun toIndustry(follow: List<String>): String {
+    fun toString(follow: List<String>): String {
         return gson.toJson(
             follow,
             object : TypeToken<ArrayList<String>>() {}.type

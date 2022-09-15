@@ -14,4 +14,7 @@ interface OldestDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOldest(list: List<OldestEntity>)
+
+    @Query("DELETE FROM oldest_table")
+    suspend fun deleteOldest()
 }

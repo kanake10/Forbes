@@ -14,4 +14,7 @@ interface AccordingToIndustryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertIndustry(list: List<AccordingToIndustryEntity>)
+
+    @Query("DELETE FROM according_to_industry_table")
+    suspend fun deleteIndustry()
 }

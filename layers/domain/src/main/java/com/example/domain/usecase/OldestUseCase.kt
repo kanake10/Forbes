@@ -7,7 +7,7 @@ import com.example.domain.repo.ForbesListRepository
 import kotlinx.coroutines.flow.Flow
 
 class OldestUseCase (private val repository: ForbesListRepository) {
-    suspend operator fun invoke(): Flow<Resource<List<Oldest>>> {
+     operator fun invoke(): Flow<Resource<List<Oldest>>> {
         return repository.getOldest()
     }
 }

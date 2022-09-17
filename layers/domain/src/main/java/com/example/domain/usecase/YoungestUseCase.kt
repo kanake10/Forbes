@@ -7,7 +7,7 @@ import com.example.domain.repo.ForbesListRepository
 import kotlinx.coroutines.flow.Flow
 
 class YoungestUseCase (private val repository: ForbesListRepository) {
-    suspend operator fun invoke(): Flow<Resource<List<Youngest>>> {
+     operator fun invoke(): Flow<Resource<List<Youngest>>> {
         return repository.getYoungest()
     }
 }

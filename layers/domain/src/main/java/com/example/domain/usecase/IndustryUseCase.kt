@@ -7,7 +7,7 @@ import com.example.domain.repo.ForbesListRepository
 import kotlinx.coroutines.flow.Flow
 
 class IndustryUseCase (private val repository: ForbesListRepository) {
-    suspend operator fun invoke(): Flow<Resource<List<Industry>>> {
+     operator fun invoke(): Flow<Resource<List<Industry>>> {
         return repository.getAccordingToIndustry()
     }
 }

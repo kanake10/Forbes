@@ -6,7 +6,7 @@ import com.example.domain.repo.ForbesListRepository
 import kotlinx.coroutines.flow.Flow
 
 class AllForbesUseCase (private val repository: ForbesListRepository) {
-    suspend operator fun invoke(): Flow<Resource<List<AllForbes>>> {
+     operator fun invoke(): Flow<Resource<List<AllForbes>>> {
         return repository.getAllForbes()
     }
 }

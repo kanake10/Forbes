@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
@@ -9,16 +9,11 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.forbes"
         minSdk 21
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -33,17 +28,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-    buildFeatures {
-        compose true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
     }
 }
 
@@ -62,7 +46,13 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
     implementation project(path: ':core')
-    implementation project(path: ':presentation')
+    implementation project(path: ':layers:domain')
+    implementation project(path: ':layers:data')
+    implementation project(path: ':layers:cache')
+
+    implementation "com.google.accompanist:accompanist-flowlayout:0.17.0"
+
+    implementation"io.coil-kt:coil-compose:1.4.0"
 
     //Dagger - Hilt
     implementation "com.google.dagger:hilt-android:2.38.1"
@@ -70,6 +60,4 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
     kapt "androidx.hilt:hilt-compiler:1.0.0"
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0-alpha03'
-
-
 }

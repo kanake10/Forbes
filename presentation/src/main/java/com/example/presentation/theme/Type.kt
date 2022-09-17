@@ -1,4 +1,4 @@
-package com.example.forbes.ui.theme
+package com.example.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

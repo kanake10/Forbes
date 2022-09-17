@@ -1,4 +1,4 @@
-package com.example.forbes
+package com.example.presentation.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,9 +10,11 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.forbes.ui.theme.ForbesTheme
+import com.example.presentation.theme.ForbesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : ComponentActivity() {
+@AndroidEntryPoint
+class ForbesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    Greeting("Ezra")
                 }
             }
         }
@@ -38,6 +40,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ForbesTheme {
-        Greeting("Android")
+        Greeting("Ezra")
     }
 }

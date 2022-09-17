@@ -19,4 +19,5 @@ abstract class ForbesDatabase :RoomDatabase(){
     abstract fun MalesDao():MalesDao
     abstract fun FemalesDao():FemalesDao
     abstract fun YoungestDao():YoungestDao
+    abstract fun AccordingDao():AccordingToIndustryDao
 }

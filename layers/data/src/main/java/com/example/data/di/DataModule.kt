@@ -44,7 +44,7 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun provideGithubRestApi(okHttpClient: OkHttpClient): ForbesListApi {
+    fun provideForbesListApi(okHttpClient: OkHttpClient): ForbesListApi {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

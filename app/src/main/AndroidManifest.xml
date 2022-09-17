@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.forbes">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".MoviesApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,9 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Forbes">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.presentation.activity.ForbesActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Forbes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

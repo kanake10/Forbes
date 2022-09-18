@@ -21,16 +21,16 @@ class ForbesListRepoImpl(
     private val oldestDao: OldestDao,
     private val youngestDao: YoungestDao
 ) : ForbesListRepository {
-    override suspend fun getAllForbes(): Flow<Resource<List<AllForbes>>> = flow {
+    override  fun getAllForbes(): Flow<Resource<List<AllForbes>>> = flow {
         emit(Resource.Loading())
 
         val getAllForbesFromDb = allForbesDao.getAllForbes().map { it.toDomain() }
         Resource.Loading(data = getAllForbesFromDb)
 
         try {
-            val apiResponse = forbesListApi.getAllForbes()
+            val apiResponseForAllForbes = forbesListApi.getAllForbes()
             allForbesDao.deleteAllForbes()
-            allForbesDao.insertAllForbes(apiResponse.map { it.toEntity() })
+            allForbesDao.insertAllForbes(apiResponseForAllForbes.map { it.toEntity() })
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -50,16 +50,16 @@ class ForbesListRepoImpl(
         emit(Resource.Success(allForbes))
     }
 
-    override suspend fun getOldest(): Flow<Resource<List<Oldest>>> = flow {
+    override  fun getOldest(): Flow<Resource<List<Oldest>>> = flow {
         emit(Resource.Loading())
 
         val databaseOldestData = oldestDao.getOldest()
         emit(Resource.Loading(data = databaseOldestData.map { it.toDomain() }))
 
         try {
-            val apiResponseTwo = forbesListApi.getOldest()
+            val apiResponseForOldest = forbesListApi.getOldest()
             oldestDao.deleteOldest()
-            oldestDao.insertOldest(apiResponseTwo.map { it.toEntity() })
+            oldestDao.insertOldest(apiResponseForOldest.map { it.toEntity() })
         }catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -79,16 +79,16 @@ class ForbesListRepoImpl(
         emit(Resource.Success(oldestData))
     }
 
-    override suspend fun getYoungest(): Flow<Resource<List<Youngest>>> = flow {
+    override  fun getYoungest(): Flow<Resource<List<Youngest>>> = flow {
         emit(Resource.Loading())
 
         val databaseYoungestData = youngestDao.getYoungest()
         emit(Resource.Loading(data = databaseYoungestData.map { it.toDomain() }))
 
         try {
-            val apiResponseThree = forbesListApi.getYoungest()
+            val apiResponseForYoungest = forbesListApi.getYoungest()
             youngestDao.deleteYoungest()
-            youngestDao.insertYoungest(apiResponseThree.map { it.toEntity() })
+            youngestDao.insertYoungest(apiResponseForYoungest.map { it.toEntity() })
         }catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -108,16 +108,16 @@ class ForbesListRepoImpl(
         emit(Resource.Success(youngestData))
     }
 
-    override suspend fun getMales(): Flow<Resource<List<Males>>> = flow {
+    override  fun getMales(): Flow<Resource<List<Males>>> = flow {
         emit(Resource.Loading())
 
         val databaseMalesData = malesDao.getMales()
         emit(Resource.Loading(data = databaseMalesData.map { it.toDomain() }))
 
         try {
-            val apiResponseFour = forbesListApi.getMales()
+            val apiResponseForMales = forbesListApi.getMales()
             malesDao.deleteMales()
-            malesDao.insertMales(apiResponseFour.map { it.toEntity() })
+            malesDao.insertMales(apiResponseForMales.map { it.toEntity() })
         }catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -137,16 +137,16 @@ class ForbesListRepoImpl(
         emit(Resource.Success(malesData))
     }
 
-    override suspend fun getFemales(): Flow<Resource<List<Female>>> = flow {
+    override  fun getFemales(): Flow<Resource<List<Female>>> = flow {
         emit(Resource.Loading())
 
         val databaseFemalesData = femalesDao.getFemales()
         emit(Resource.Loading(data = databaseFemalesData.map { it.toDomain() }))
 
         try {
-            val apiResponseFive = forbesListApi.getFemales()
+            val apiResponseForFemales = forbesListApi.getFemales()
             femalesDao.deleteFemales()
-            femalesDao.insertFemales(apiResponseFive.map { it.toEntity() })
+            femalesDao.insertFemales(apiResponseForFemales.map { it.toEntity() })
         }catch (exception: IOException) {
             emit(
                 Resource.Error(
@@ -166,16 +166,16 @@ class ForbesListRepoImpl(
         emit(Resource.Success(femalesData))
     }
 
-    override suspend fun getAccordingToIndustry(): Flow<Resource<List<Industry>>> = flow {
+    override  fun getAccordingToIndustry(): Flow<Resource<List<Industry>>> = flow {
         emit(Resource.Loading())
 
         val databaseIndustryData =  accordingToIndustryDao.getIndustry()
         emit(Resource.Loading(data = databaseIndustryData.map { it.toDomain() }))
 
         try {
-            val apiResponseSix = forbesListApi.getAccordingToIndustry()
+            val apiResponseForIndustry = forbesListApi.getAccordingToIndustry()
             accordingToIndustryDao.deleteIndustry()
-            accordingToIndustryDao.insertIndustry(apiResponseSix.map { it.toEntity() })
+            accordingToIndustryDao.insertIndustry(apiResponseForIndustry.map { it.toEntity() })
         }catch (exception: IOException) {
             emit(
                 Resource.Error(

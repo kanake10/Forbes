@@ -40,6 +40,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
+    hilt {
+        enableAggregatingTask = true
+    }
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'

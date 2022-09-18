@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/layers/cache" />
             <option value="$PROJECT_DIR$/layers/data" />
             <option value="$PROJECT_DIR$/layers/domain" />
+            <option value="$PROJECT_DIR$/presentation" />
           </set>
         </option>
       </GradleProjectSettings>

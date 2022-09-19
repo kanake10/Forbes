@@ -10,7 +10,7 @@ import com.example.cache.entity.*
 @TypeConverters(Converters::class)
 @Database(
     entities = [AccordingToIndustryEntity::class,AllForbesEntity::class,FemalesEntity::class,MalesEntity::class,OldestEntity::class,YoungestEntity::class],
-    version = 1,
+    version = 3,
     exportSchema = false
 )
 abstract class ForbesDatabase :RoomDatabase(){

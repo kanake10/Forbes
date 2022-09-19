@@ -49,7 +49,6 @@ fun ItemOldestCard(forbe: Oldest) {
                 contentScale = ContentScale.Crop
             )
 
-
             Text(
                 text = forbe.personName!!,
                 textAlign = TextAlign.Start,

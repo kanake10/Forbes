@@ -37,10 +37,6 @@ android {
         kotlinCompilerExtensionVersion compose_version
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion compose_version
-    }
-
     hilt {
         enableAggregatingTask = true
     }

@@ -50,7 +50,7 @@ fun ItemFemalesCard(forbe: Female) {
 
 
             Text(
-                text = forbe.personName,
+                text = forbe.personName!!,
                 textAlign = TextAlign.Start,
                 modifier = Modifier.padding(6.dp),
                 fontSize = 15.sp,

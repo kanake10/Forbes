@@ -17,11 +17,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.example.presentation.screens.forbes_screen.components.*
 import com.example.presentation.viewmodels.*
 
 @Composable
 fun ForbesScreen(
+    navController: NavHostController,
     allViewModel: AllForbesViewModel = hiltViewModel(),
     femalesViewModel: FemalesViewModel = hiltViewModel(),
     industryViewModel: IndustryViewModel = hiltViewModel(),
@@ -35,6 +37,7 @@ fun ForbesScreen(
     val malesState = malesViewModel.state.value
     val oldestState = oldestViewModel.state.value
     val youngestState = youngestViewModel.state.value
+
 
 
     Box(modifier = Modifier.fillMaxSize()) {
@@ -129,7 +132,7 @@ fun ForbesScreen(
         }
 
 
-        if (allforbesState.isLoading && femalesState.isLoading && malesState.isLoading && industryState.isLoading && oldestState.isLoading && youngestState.isLoading) {
+        if (allforbesState.isLoading) {
             Box(modifier = Modifier.fillMaxSize()) {
                 CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
             }

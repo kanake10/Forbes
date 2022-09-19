@@ -34,6 +34,8 @@ apply from: "scripts/githooks.gradle"
 //    apply from: "../scripts/versionsplugin.gradle"
 //}
 
+
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

@@ -49,9 +49,8 @@ fun ItemYoungestCard(forbe: Youngest) {
                 contentScale = ContentScale.Crop
             )
 
-
             Text(
-                text = forbe.personName,
+                text = forbe.personName!!,
                 textAlign = TextAlign.Start,
                 modifier = Modifier.padding(6.dp),
                 fontSize = 15.sp,

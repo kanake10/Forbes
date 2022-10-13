@@ -23,7 +23,6 @@ import com.example.presentation.viewmodels.*
 
 @Composable
 fun ForbesScreen(
-    navController: NavHostController,
     allViewModel: AllForbesViewModel = hiltViewModel(),
     femalesViewModel: FemalesViewModel = hiltViewModel(),
     industryViewModel: IndustryViewModel = hiltViewModel(),
@@ -52,7 +51,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(allforbesState.allForbes) { forbes ->
@@ -66,7 +65,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(femalesState.female) { forbes ->
@@ -80,7 +79,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(malesState.males) { forbes ->
@@ -94,7 +93,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(industryState.industry) { forbes ->
@@ -108,7 +107,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(oldestState.oldest) { forbes ->
@@ -122,7 +121,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White
+                color = Color.Blue
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(youngestState.youngest) { forbes ->

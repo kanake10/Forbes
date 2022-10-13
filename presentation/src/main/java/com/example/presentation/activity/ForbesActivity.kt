@@ -30,7 +30,7 @@ class ForbesActivity : ComponentActivity() {
                 composable(
                     route = Screen.Home.route
                 ) {
-                    ForbesScreen(navController)
+                    ForbesScreen()
                 }
 
             }

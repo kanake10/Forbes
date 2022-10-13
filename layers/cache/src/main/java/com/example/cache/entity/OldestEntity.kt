@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 data class OldestEntity(
     @PrimaryKey(autoGenerate = false)
     val rank: Int?,
-    val finalWorth: Double?,
     val personName: String?,
     val city: String?,
     val source: String?,

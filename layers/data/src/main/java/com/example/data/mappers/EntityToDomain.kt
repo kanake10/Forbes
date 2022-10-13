@@ -6,7 +6,6 @@ import com.example.domain.models.*
 internal fun AccordingToIndustryEntity.toDomain(): Industry{
     return Industry(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -21,7 +20,6 @@ internal fun AccordingToIndustryEntity.toDomain(): Industry{
 internal fun AllForbesEntity.toDomain(): AllForbes{
     return AllForbes(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -36,7 +34,6 @@ internal fun AllForbesEntity.toDomain(): AllForbes{
 internal fun FemalesEntity.toDomain(): Female{
     return Female(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -51,7 +48,6 @@ internal fun FemalesEntity.toDomain(): Female{
 internal fun MalesEntity.toDomain(): Males{
     return Males(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -66,7 +62,6 @@ internal fun MalesEntity.toDomain(): Males{
 internal fun OldestEntity.toDomain(): Oldest{
     return Oldest(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -81,7 +76,6 @@ internal fun OldestEntity.toDomain(): Oldest{
 internal fun YoungestEntity.toDomain(): Youngest{
     return Youngest(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,

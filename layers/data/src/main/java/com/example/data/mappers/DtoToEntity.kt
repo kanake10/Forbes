@@ -6,7 +6,6 @@ import com.example.data.dtos.*
 internal fun AllForbesDto.toEntity():AllForbesEntity{
     return AllForbesEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -21,7 +20,6 @@ internal fun AllForbesDto.toEntity():AllForbesEntity{
 internal fun FemaleDto.toEntity():FemalesEntity{
     return FemalesEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -36,7 +34,6 @@ internal fun FemaleDto.toEntity():FemalesEntity{
 internal fun IndustryDto.toEntity():AccordingToIndustryEntity{
     return AccordingToIndustryEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -51,7 +48,6 @@ internal fun IndustryDto.toEntity():AccordingToIndustryEntity{
 internal fun MalesDto.toEntity():MalesEntity{
     return MalesEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -66,7 +62,6 @@ internal fun MalesDto.toEntity():MalesEntity{
 internal fun OldestDto.toEntity():OldestEntity{
     return OldestEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,
@@ -81,7 +76,6 @@ internal fun OldestDto.toEntity():OldestEntity{
 internal fun YoungestDto.toEntity():YoungestEntity{
     return YoungestEntity(
         this.rank,
-        this.finalWorth,
         this.personName,
         this.city,
         this.source,

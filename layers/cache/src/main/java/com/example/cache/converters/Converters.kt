@@ -6,27 +6,14 @@ import com.example.domain.models.Industry
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-@ProvidedTypeConverter
-class Converters (
-    private val gson:Gson
-        ){
-
+class Converters {
     @TypeConverter
-    fun fromString(json: String): List<String> {
-        return gson.fromJson<ArrayList<String>>(
-            json,
-            object : TypeToken<ArrayList<String>>() {}.type
-        ) ?: emptyList()
+    fun listOfStringToString(str: List<String>?): String? {
+        return Gson().toJson(str)
     }
 
     @TypeConverter
-    fun toString(follow: List<String>): String {
-        return gson.toJson(
-            follow,
-            object : TypeToken<ArrayList<String>>() {}.type
-        ) ?: "[]"
+    fun strToListString(str: String?): List<String>? {
+        return Gson().fromJson(str, object : TypeToken<List<String>>() {}.type)
     }
-
-
-
 }

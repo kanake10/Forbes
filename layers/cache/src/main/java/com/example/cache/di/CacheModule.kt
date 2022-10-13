@@ -19,26 +19,9 @@ object CacheModule {
 
     @Provides
     @Singleton
-    fun provideGson() = Gson()
-
-    @Provides
-    @Singleton
-    fun provideConverters(gson: Gson) = Converters(gson)
-
-    @Provides
-    @Singleton
-    fun provideForbesDatabase(
-        @ApplicationContext context: Context,
-        converters: Converters
-    ): ForbesDatabase {
-        return Room.databaseBuilder(
-            context,
-            ForbesDatabase::class.java,
-            FORBES_DB
-        )
-            .addTypeConverter(converters)
-            .fallbackToDestructiveMigration()
-            .build()
+    fun provideDataBase(@ApplicationContext context: Context): ForbesDatabase {
+        return ForbesDatabase.getInstance(context)
     }
+
 }
 

@@ -51,7 +51,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(allforbesState.allForbes) { forbes ->
@@ -65,7 +65,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(femalesState.female) { forbes ->
@@ -79,7 +79,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(malesState.males) { forbes ->
@@ -93,7 +93,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(industryState.industry) { forbes ->
@@ -107,7 +107,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(oldestState.oldest) { forbes ->
@@ -121,7 +121,7 @@ fun ForbesScreen(
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.Blue
+                color = Color.Black
             )
             LazyRow(modifier = Modifier.height(270.dp)) {
                 items(youngestState.youngest) { forbes ->

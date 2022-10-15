@@ -27,27 +27,26 @@ import com.example.domain.models.Oldest
 @Composable
 fun ItemOldestCard(forbe: Oldest) {
     Card(
-        modifier = Modifier
-            .size(120.dp, 250.dp)
-            .padding(6.dp)
-            .clip(RoundedCornerShape(8.dp)),
-        elevation = 0.dp,
-        backgroundColor = MaterialTheme.colors.onSurface
+        modifier = Modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(15.dp),
+        elevation = 5.dp
     ) {
-        Column(modifier = Modifier.fillMaxSize()) {
-
-            val image: Painter = rememberImagePainter(data = forbe.squareImage)
-
+        Column(
+            modifier = Modifier
+                .padding(8.dp)
+                .fillMaxWidth(),
+            verticalArrangement = Arrangement.Center
+        ) {
             Image(
                 modifier = Modifier
-                    .height(120.dp)
-                    .width(100.dp)
-                    .clip(RoundedCornerShape(8.dp)),
-                painter = image,
-                alignment = Alignment.Center,
-                contentDescription = "",
+                    .width(190.dp)
+                    .clip(RoundedCornerShape(10.dp))
+                    .height(190.dp),
+                painter = rememberImagePainter(data = forbe.squareImage),
+                contentDescription = " image",
                 contentScale = ContentScale.Crop
             )
+            Spacer(modifier = Modifier.width(6.dp))
 
             Text(
                 text = forbe.personName!!,
@@ -56,11 +55,9 @@ fun ItemOldestCard(forbe: Oldest) {
                 fontSize = 15.sp,
                 fontWeight = FontWeight.Normal,
                 fontFamily = FontFamily.SansSerif,
-                color = Color.White,
+                color = Color.Black,
                 maxLines = 1
             )
-
         }
-
     }
 }

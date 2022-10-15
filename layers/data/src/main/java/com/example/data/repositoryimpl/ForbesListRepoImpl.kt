@@ -21,36 +21,36 @@ class ForbesListRepoImpl(
     private val oldestDao: OldestDao,
     private val youngestDao: YoungestDao
 ) : ForbesListRepository {
-    override  fun getAllForbes(): Flow<Resource<List<AllForbes>>> = flow {
+    override fun getAllForbes(): Flow<Resource<List<AllForbes>>> = flow {
         emit(Resource.Loading())
 
-        val getAllForbesFromDb = allForbesDao.getAllForbes().map { it.toDomain() }
-        Resource.Loading(data = getAllForbesFromDb)
+        val allforb = allForbesDao.getAllForbes()
+        emit(Resource.Loading(data = allforb.map { it.toDomain() }))
 
         try {
-            val apiResponseForAllForbes = forbesListApi.getAllForbes()
+            val apiResponseForAll = forbesListApi.getAllForbes()
             allForbesDao.deleteAllForbes()
-            allForbesDao.insertAllForbes(apiResponseForAllForbes.map { it.toEntity() })
+            allForbesDao.insertAllForbes(apiResponseForAll.map { it.toEntity() })
         } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",
-                    data = getAllForbesFromDb
+                    data = allforb.map { it.toDomain() }
                 )
             )
         } catch (exception: HttpException) {
             emit(
                 Resource.Error(
                     message = exception.message(),
-                    data = getAllForbesFromDb
+                    data = allforb.map { it.toDomain() }
                 )
             )
         }
-        val allForbes = allForbesDao.getAllForbes().map { it.toDomain() }
-        emit(Resource.Success(allForbes))
+        val AllData = allForbesDao.getAllForbes().map { it.toDomain() }
+        emit(Resource.Success(AllData))
     }
 
-    override  fun getOldest(): Flow<Resource<List<Oldest>>> = flow {
+    override fun getOldest(): Flow<Resource<List<Oldest>>> = flow {
         emit(Resource.Loading())
 
         val databaseOldestData = oldestDao.getOldest()
@@ -60,7 +60,7 @@ class ForbesListRepoImpl(
             val apiResponseForOldest = forbesListApi.getOldest()
             oldestDao.deleteOldest()
             oldestDao.insertOldest(apiResponseForOldest.map { it.toEntity() })
-        }catch (exception: IOException) {
+        } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",
@@ -79,7 +79,7 @@ class ForbesListRepoImpl(
         emit(Resource.Success(oldestData))
     }
 
-    override  fun getYoungest(): Flow<Resource<List<Youngest>>> = flow {
+    override fun getYoungest(): Flow<Resource<List<Youngest>>> = flow {
         emit(Resource.Loading())
 
         val databaseYoungestData = youngestDao.getYoungest()
@@ -89,7 +89,7 @@ class ForbesListRepoImpl(
             val apiResponseForYoungest = forbesListApi.getYoungest()
             youngestDao.deleteYoungest()
             youngestDao.insertYoungest(apiResponseForYoungest.map { it.toEntity() })
-        }catch (exception: IOException) {
+        } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",
@@ -108,28 +108,28 @@ class ForbesListRepoImpl(
         emit(Resource.Success(youngestData))
     }
 
-    override  fun getMales(): Flow<Resource<List<Males>>> = flow {
+    override fun getMales(): Flow<Resource<List<Males>>> = flow {
         emit(Resource.Loading())
 
-        val databaseMalesData = malesDao.getMales()
-        emit(Resource.Loading(data = databaseMalesData.map { it.toDomain() }))
+        val databasemalesData = malesDao.getMales()
+        emit(Resource.Loading(data = databasemalesData.map { it.toDomain() }))
 
         try {
             val apiResponseForMales = forbesListApi.getMales()
             malesDao.deleteMales()
             malesDao.insertMales(apiResponseForMales.map { it.toEntity() })
-        }catch (exception: IOException) {
+        } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",
-                    data = databaseMalesData.map { it.toDomain() }
+                    data = databasemalesData.map { it.toDomain() }
                 )
             )
         } catch (exception: HttpException) {
             emit(
                 Resource.Error(
                     message = exception.message(),
-                    data = databaseMalesData.map { it.toDomain() }
+                    data = databasemalesData.map { it.toDomain() }
                 )
             )
         }
@@ -137,46 +137,46 @@ class ForbesListRepoImpl(
         emit(Resource.Success(malesData))
     }
 
-    override  fun getFemales(): Flow<Resource<List<Female>>> = flow {
+    override fun getFemales(): Flow<Resource<List<Female>>> = flow {
         emit(Resource.Loading())
 
-        val databaseFemalesData = femalesDao.getFemales()
-        emit(Resource.Loading(data = databaseFemalesData.map { it.toDomain() }))
+        val databaseFemaleData = femalesDao.getFemales()
+        emit(Resource.Loading(data = databaseFemaleData.map { it.toDomain() }))
 
         try {
             val apiResponseForFemales = forbesListApi.getFemales()
             femalesDao.deleteFemales()
             femalesDao.insertFemales(apiResponseForFemales.map { it.toEntity() })
-        }catch (exception: IOException) {
+        } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",
-                    data = databaseFemalesData.map { it.toDomain() }
+                    data = databaseFemaleData.map { it.toDomain() }
                 )
             )
         } catch (exception: HttpException) {
             emit(
                 Resource.Error(
                     message = exception.message(),
-                    data = databaseFemalesData.map { it.toDomain() }
+                    data = databaseFemaleData.map { it.toDomain() }
                 )
             )
         }
-        val femalesData = femalesDao.getFemales().map { it.toDomain() }
-        emit(Resource.Success(femalesData))
+        val femaleData = femalesDao.getFemales().map { it.toDomain() }
+        emit(Resource.Success(femaleData))
     }
 
-    override  fun getAccordingToIndustry(): Flow<Resource<List<Industry>>> = flow {
+    override fun getAccordingToIndustry(): Flow<Resource<List<Industry>>> = flow {
         emit(Resource.Loading())
 
-        val databaseIndustryData =  accordingToIndustryDao.getIndustry()
+        val databaseIndustryData = accordingToIndustryDao.getIndustry()
         emit(Resource.Loading(data = databaseIndustryData.map { it.toDomain() }))
 
         try {
             val apiResponseForIndustry = forbesListApi.getAccordingToIndustry()
             accordingToIndustryDao.deleteIndustry()
             accordingToIndustryDao.insertIndustry(apiResponseForIndustry.map { it.toEntity() })
-        }catch (exception: IOException) {
+        } catch (exception: IOException) {
             emit(
                 Resource.Error(
                     message = "Connection Lost",

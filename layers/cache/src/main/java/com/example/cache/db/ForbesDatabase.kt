@@ -26,9 +26,6 @@ abstract class ForbesDatabase :RoomDatabase(){
         }
     }
 
-
-
-
     abstract fun AllForbesDao():AllForbesDao
     abstract fun OldestDao():OldestDao
     abstract fun MalesDao():MalesDao

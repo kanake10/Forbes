@@ -47,7 +47,6 @@ fun ItemForbesCard(forbe: AllForbes) {
                 contentScale = ContentScale.Crop
             )
 
-
             Text(
                 text = forbe.personName!!,
                 textAlign = TextAlign.Start,
@@ -58,8 +57,6 @@ fun ItemForbesCard(forbe: AllForbes) {
                 color = Color.White,
                 maxLines = 1
             )
-
         }
-
     }
 }

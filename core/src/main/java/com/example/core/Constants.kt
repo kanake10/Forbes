@@ -6,8 +6,8 @@ object Constants {
     const val ALL_FORBES_ENDPOINT = "forbes400"
     const val OLDEST_ENDPOINT = "forbes400/oldest"
     const val YOUNGEST_ENDPOINT = "forbes400/youngest"
-    const val MALE_ENDPOINT = "forbes400/youngest"
-    const val FEMALE_ENDPOINT = "forbes400/youngest"
+    const val MALE_ENDPOINT = "forbes400/male"
+    const val FEMALE_ENDPOINT = "forbes400/female"
     const val INDUSTRY_ENDPOINT = "forbes400/industries/retail"
 }
 

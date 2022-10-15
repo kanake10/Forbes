@@ -2,9 +2,12 @@
 
 An android app built using Kotlin that consumes [FORBES API]. It has been built following Clean Architecture Principle, Repository Pattern, MVVM Architecture in the presentation layer as well as Jetpack components.
 
+## Few Hiccups
+Some of the images are not cached, returns an error while fetched from the API
 
 
 ## Table Of Content.
+
 
 - [Architecture](#architecture)
     - [What is Clean Architecture](##why-clean-architecture)
@@ -17,14 +20,13 @@ An android app built using Kotlin that consumes [FORBES API]. It has been built 
     - [Libraries](##libraries)
     - [Extras](##extras)
 - [Helpful Resources](#helpful-resources)
-- [Screenshots](#screenshots)
 
 
+### App Preview
 
+|<img src="screenshots/image001.png" width=250/>|<img src="screenshots/image002.png" width=250/>|
+|:----:|:----:
 
-
-
-## Architecture.
 
 ### What is Clean Architecture?
 
@@ -32,7 +34,6 @@ A well planned architecture is extremely important for an app to scale and all a
 
 Clean architecture was proposed by [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) in 2012 in the [Clean Code Blog](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) and it follow the SOLID principle.
 
-<p align="center"><img src="architecture.png" alt="Clean Architecture Diagram"></p>
 
 The circles represent different layers of your app. Note that:
 

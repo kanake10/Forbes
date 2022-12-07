@@ -1,7 +1,7 @@
 package com.example.core
 
 object Constants {
-    const val BASE_URL = "https://forbes400.herokuapp.com/api/"
+    const val BASE_URL = "https://forbes400.onrender.com/api/"
     const val FORBES_DB = "forbes_db"
     const val ALL_FORBES_ENDPOINT = "forbes400"
     const val OLDEST_ENDPOINT = "forbes400/oldest"
